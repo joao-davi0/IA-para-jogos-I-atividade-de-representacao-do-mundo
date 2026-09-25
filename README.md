@@ -14,5 +14,5 @@ Use o item com ícone de cruz para restaurar pontos de vida.
 Sobreviva por um minuto para vencer.
 
 ## Para executar:
-
+Basta abrir o arquivo executável na pasta de arquivos de execução correspondente (linux ou windows).
 
