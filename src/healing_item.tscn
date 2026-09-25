@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dn88t1kmpu78i"]
+
+[ext_resource type="Script" uid="uid://bry5epnhn7sne" path="res://healing_item.gd" id="1_noqfx"]
+[ext_resource type="Texture2D" uid="uid://bm27nmfjsvu2l" path="res://art/plus.png" id="1_p7350"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_um1fp"]
+radius = 17.029387
+
+[node name="HealingItem" type="Area2D" unique_id=1354069542]
+script = ExtResource("1_noqfx")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=420362132]
+texture = ExtResource("1_p7350")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=448359909]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_um1fp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

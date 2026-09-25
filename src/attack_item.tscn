@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dgfpxg11chsaj"]
+
+[ext_resource type="Script" uid="uid://7dunp4ftakk7" path="res://attack_item.gd" id="1_j1ea4"]
+[ext_resource type="Texture2D" uid="uid://d2glv0y8rci8u" path="res://art/star.png" id="1_l6ho3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qni12"]
+size = Vector2(32, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1ea4"]
+radius = 250.0
+
+[node name="AttackItem" type="Area2D" unique_id=285077867]
+script = ExtResource("1_j1ea4")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1967495442]
+texture = ExtResource("1_l6ho3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=105355104]
+shape = SubResource("RectangleShape2D_qni12")
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=1103966544]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=881816646]
+shape = SubResource("CircleShape2D_j1ea4")
+
+[node name="RangeVisual" type="Polygon2D" parent="." unique_id=1560758366]
+visible = false
+color = Color(1, 0.8980392, 0, 0.5058824)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

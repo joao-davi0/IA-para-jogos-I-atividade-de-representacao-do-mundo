@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bl22cgr7butfr"]
+
+[ext_resource type="PackedScene" uid="uid://dgdmkt3ji2kyv" path="res://mob.tscn" id="1_fy505"]
+[ext_resource type="Script" uid="uid://digodx65naye5" path="res://area.gd" id="1_o6stw"]
+[ext_resource type="PackedScene" uid="uid://dgfpxg11chsaj" path="res://attack_item.tscn" id="2_o6stw"]
+[ext_resource type="PackedScene" uid="uid://dn88t1kmpu78i" path="res://healing_item.tscn" id="3_ak2r3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_um1fp"]
+size = Vector2(1152, 1152)
+
+[node name="Area" type="Node2D" unique_id=129889940]
+script = ExtResource("1_o6stw")
+
+[node name="Background" type="ColorRect" parent="." unique_id=112636155]
+z_index = -10
+offset_right = 1152.0
+offset_bottom = 1152.0
+color = Color(0.11503773, 0.7195787, 0.4070843, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2127148068]
+position = Vector2(576, 576)
+shape = SubResource("RectangleShape2D_um1fp")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1330293816]
+z_index = -9
+points = PackedVector2Array(1152, 0, 0, 0, 0, 1152, 1152, 1152, 1152, 0)
+default_color = Color(0.100703694, 0.41809684, 0.2533367, 1)
+
+[node name="Mob" parent="." unique_id=765508069 instance=ExtResource("1_fy505")]
+position = Vector2(184, 208)
+
+[node name="Mob2" parent="." unique_id=1556716548 instance=ExtResource("1_fy505")]
+position = Vector2(344, 928)
+
+[node name="Mob3" parent="." unique_id=1385617143 instance=ExtResource("1_fy505")]
+position = Vector2(976, 144)
+
+[node name="Mob4" parent="." unique_id=1519170898 instance=ExtResource("1_fy505")]
+position = Vector2(1096, 1088)
+
+[node name="Mob5" parent="." unique_id=1994918717 instance=ExtResource("1_fy505")]
+position = Vector2(936, 720)
+
+[node name="Mob6" parent="." unique_id=380128975 instance=ExtResource("1_fy505")]
+position = Vector2(112, 1040)
+
+[node name="Mob7" parent="." unique_id=1530416922 instance=ExtResource("1_fy505")]
+position = Vector2(232, 480)
+
+[node name="Mob8" parent="." unique_id=185057692 instance=ExtResource("1_fy505")]
+position = Vector2(616, 296)
+
+[node name="AttackItem" parent="." unique_id=997699582 instance=ExtResource("2_o6stw")]
+position = Vector2(680, 248)
+
+[node name="AttackItem2" parent="." unique_id=285077867 instance=ExtResource("2_o6stw")]
+position = Vector2(209, 657)
+
+[node name="HealingItem" parent="." unique_id=1460698039 instance=ExtResource("3_ak2r3")]
+position = Vector2(800, 1056)

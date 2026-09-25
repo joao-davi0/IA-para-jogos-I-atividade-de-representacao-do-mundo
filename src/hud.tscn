@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://mupeov3es7gv"]
+
+[ext_resource type="Script" uid="uid://cmf4ufsymdo6w" path="res://hud.gd" id="1_37p78"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n2snw"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_8sq4i"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_37p78"]
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_64ctp"]
+font_size = 60
+
+[node name="HUD" type="CanvasLayer" unique_id=1255614167]
+script = ExtResource("1_37p78")
+
+[node name="HealthLabel" type="Label" parent="." unique_id=1192133963]
+offset_left = 24.0
+offset_right = 192.0
+offset_bottom = 64.0
+text = "HP: 100"
+label_settings = SubResource("LabelSettings_n2snw")
+vertical_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="." unique_id=1039997565]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -194.0
+offset_right = -26.0
+offset_bottom = 64.0
+grow_horizontal = 0
+text = "Tempo: 60"
+label_settings = SubResource("LabelSettings_8sq4i")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="StartScreen" type="Control" parent="." unique_id=241188917]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="StartScreen" unique_id=966855919]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 20.800001
+anchor_right = 20.800001
+offset_left = -832.00006
+offset_top = 176.0
+offset_right = 823.99994
+offset_bottom = 259.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sobreviva aos inimigos!"
+label_settings = SubResource("LabelSettings_37p78")
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="StartScreen" unique_id=1989721928]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 20.800001
+anchor_right = 20.800001
+offset_left = -200.00006
+offset_top = 704.0
+offset_right = 159.99994
+offset_bottom = 808.0
+text = "COMEÇAR"
+
+[node name="GameOverScreen" type="Control" parent="." unique_id=342148420]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameOverLabel" type="Label" parent="GameOverScreen" unique_id=150386924]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 20.800001
+anchor_right = 20.800001
+offset_left = -832.00006
+offset_top = 176.0
+offset_right = 823.99994
+offset_bottom = 259.0
+text = "Game Over!"
+label_settings = SubResource("LabelSettings_64ctp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="GameOverScreen" unique_id=1318023119]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 20.800001
+anchor_right = 20.800001
+offset_left = -200.00006
+offset_top = 704.0
+offset_right = 159.99994
+offset_bottom = 808.0
+text = "JOGAR NOVAMENTE"
+
+[connection signal="pressed" from="StartScreen/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="GameOverScreen/RestartButton" to="." method="_on_restart_button_pressed"]
